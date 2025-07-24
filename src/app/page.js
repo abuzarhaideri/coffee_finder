@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import SearchComponent from "./search/SearchComponent";
+import Location from "./locations/page";
 
 import colombianSupremoImg from "./images/Colombian Supremo cp2.jpg";
 import ethiopianYirgacheffeImg from "./images/Ethiopian Yirgacheffe cp2.jpeg";
@@ -10,25 +11,7 @@ import sumatraMandhelingImg from "./images/Sumatra Mandheling cp2.webp";
 export default function Home() {
   return (
     <div>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/coffee-beans">Coffee Beans</Link>
-            </li>
-            <li>
-              <Link href="/about-us">About Us</Link>
-            </li>
-            <li>
-              <Link href="/coffee-stories">Coffee Stories</Link>
-            </li>
-            <li>
-              <Link href="/locations">Locations</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
+  
       <main>
         <section className="hero" style={{
           background: "linear-gradient(135deg, #6f4e37 0%, #d2b48c 100%)",
@@ -45,7 +28,8 @@ export default function Home() {
           </p>
         </section>
 
-        <SearchComponent />
+        {/* <SearchComponent /> */}
+        <Location/>
 
         <section className="featured-coffees" style={{ animation: "slideUp 1s ease forwards", opacity: 0 }}>
           <h2>Featured Coffee Beans</h2>
@@ -115,6 +99,7 @@ export default function Home() {
       </main>
 
       <style jsx>{`
+     
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }

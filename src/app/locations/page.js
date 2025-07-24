@@ -112,7 +112,7 @@ export default function Locations() {
             </li>
           ))
         ) : (
-          <li className={styles.noResults}>No coffee shops found.</li>
+          <li className={styles.noResults}>Explore Coffee Shops here.</li>
         )}
       </ul>
     </div>
