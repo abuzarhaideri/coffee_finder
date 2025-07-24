@@ -1,0 +1,140 @@
+.locationsContainer {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fef6e4, #f5e1da);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(111, 78, 55, 0.3);
+  font-family: 'Georgia', serif;
+  color: #4b3b2b;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #d2b48c;
+  color: #6f4e37;
+}
+
+.locationIcon {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(1px 2px 3px rgba(111, 78, 55, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.locationIcon:hover {
+  transform: translateZ(10px) scale(1.3);
+}
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 12px rgba(111, 78, 55, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  border-radius: 12px 0 0 12px;
+  transition: box-shadow 0.3s ease;
+  height: 40px;
+  font-family: 'Georgia', serif;
+  color: #4b3b2b;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  box-shadow: inset 0 0 8px rgba(111, 78, 55, 0.7);
+}
+
+.searchButton {
+  background-color: #6f4e37;
+  color: white;
+  border: none;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0 12px 12px 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  height: 40px;
+  font-family: 'Georgia', serif;
+  box-sizing: border-box;
+}
+
+.searchButton:hover {
+  background-color: #5a3e2a;
+  transform: scale(1.1);
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+}
+
+.error {
+  color: #b00020;
+  font-weight: 600;
+}
+
+.coffeeShopsTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6f4e37;
+  text-shadow: 1px 1px 2px #d2b48c;
+  font-family: 'Georgia', serif;
+}
+
+.coffeeShopsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.coffeeShopItem {
+  background: linear-gradient(135deg, #f9f1e7, #f0d9c7);
+  border: 2px solid #d2b48c;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 2px 4px 8px rgba(111, 78, 55, 0.3);
+  font-family: 'Georgia', serif;
+  color: #4b3b2b;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.coffeeShopItem:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 4px 8px 16px rgba(111, 78, 55, 0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

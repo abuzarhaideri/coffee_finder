@@ -1,103 +1,129 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import SearchComponent from "./search/SearchComponent";
+
+import colombianSupremoImg from "./images/Colombian Supremo cp2.jpg";
+import ethiopianYirgacheffeImg from "./images/Ethiopian Yirgacheffe cp2.jpeg";
+import sumatraMandhelingImg from "./images/Sumatra Mandheling cp2.webp";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <Link href="/coffee-beans">Coffee Beans</Link>
+            </li>
+            <li>
+              <Link href="/about-us">About Us</Link>
+            </li>
+            <li>
+              <Link href="/coffee-stories">Coffee Stories</Link>
+            </li>
+            <li>
+              <Link href="/locations">Locations</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      <main>
+        <section className="hero" style={{
+          background: "linear-gradient(135deg, #6f4e37 0%, #d2b48c 100%)",
+          color: "#fff8f0",
+          padding: "6rem 2rem",
+          textAlign: "center",
+          animation: "fadeIn 2s ease-in-out"
+        }}>
+          <h1 style={{ fontSize: "3.5rem", marginBottom: "1rem", textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
+            Welcome to Coffee Finder
+          </h1>
+          <p style={{ fontSize: "1.5rem", maxWidth: "600px", margin: "0 auto", textShadow: "1px 1px 3px rgba(0,0,0,0.3)" }}>
+            Your guide to the best coffee beans, stories, and locations.
+          </p>
+        </section>
+
+        <SearchComponent />
+
+        <section className="featured-coffees" style={{ animation: "slideUp 1s ease forwards", opacity: 0 }}>
+          <h2>Featured Coffee Beans</h2>
+          <div className="coffee-list">
+            <article className="coffee-item">
+              <Link href="/coffee-beans">
+                <img
+                  src={colombianSupremoImg.src}
+                  alt="Colombian Supremo"
+                  className="coffee-img"
+                />
+                <h3>Colombian Supremo</h3>
+                <p>Rich and smooth with a hint of chocolate.</p>
+              </Link>
+            </article>
+            <article className="coffee-item">
+              <Link href="/coffee-beans">
+                <img
+                  src={ethiopianYirgacheffeImg.src}
+                  alt="Ethiopian Yirgacheffe"
+                  className="coffee-img"
+                />
+                <h3>Ethiopian Yirgacheffe</h3>
+                <p>Floral aroma with bright citrus notes.</p>
+              </Link>
+            </article>
+            <article className="coffee-item">
+              <Link href="/coffee-beans">
+                <img
+                  src={sumatraMandhelingImg.src}
+                  alt="Sumatra Mandheling"
+                  className="coffee-img"
+                />
+                <h3>Sumatra Mandheling</h3>
+                <p>Full-bodied with earthy undertones.</p>
+              </Link>
+            </article>
+          </div>
+        </section>
+
+        <section className="coffee-stories" style={{ animation: "slideUp 1.2s ease forwards", opacity: 0 }}>
+          <h2>Coffee Stories</h2>
+          <p>Discover the journey of coffee from farm to cup.</p>
+        </section>
+
+        <section className="locations" style={{ animation: "slideUp 1.4s ease forwards", opacity: 0 }}>
+          <h2>Locations</h2>
+          <p>Find coffee shops and roasters near you.</p>
+          <div className="location-icons">
+            <img
+              src="/location.svg"
+              alt="Location Icon"
+              className="location-icon"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            <img
+              src="/location.svg"
+              alt="Location Icon"
+              className="location-icon"
+            />
+            <img
+              src="/location.svg"
+              alt="Location Icon"
+              className="location-icon"
+            />
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
 }
